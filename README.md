@@ -1,5 +1,5 @@
 # AFSlogscan
-Python utility for analysing RSGB contest log files (containing all submitted QSOs for a contest)
+Python utility for analysing RSGB contest log files (available here: https://www.rsgbcc.org/hf/). These contain all submitted QSOs for a contest.
 
 Usage: python logscan.py \<filename of CSV\> \<list of entrant callsigns\>
 

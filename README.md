@@ -1,7 +1,7 @@
 # AFSlogscan
 Python utility for analysing RSGB contest log files (containing all submitted QSOs for a contest)
 
-Usage: python logscan.py <filename of CSV> <list of entrant callsigns>
+Usage: python logscan.py \<filename of CSV\> \<list of entrant callsigns\>
 
 e.g. python logscan.py RSGB_AFS_80m-40m_Contests_Phone_240120_80m-40m_OpenLogQSOs.csv M4T G4PIQ G4BUO G5PI G4KNO
  

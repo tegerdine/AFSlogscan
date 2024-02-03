@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """\
-Read in a RSGB AFS contest result CSV file and plot QSO count and freq vs. time
+Read in a RSGB contest result CSV file and plot QSO count and freq vs. time
 
 Usage: python logscan.py [CSV filename] callsign1 callsign2 ... callsignN
 

@@ -6,7 +6,6 @@ Usage: python logscan.py
 
 G0LRD, 2024-02-04
 """
-import sys
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.dates import DateFormatter
@@ -35,7 +34,7 @@ def csv_analyse(filename, wanted_calls):
 
     ax[0].xaxis.set_major_formatter(DateFormatter("%H:%M"))
     ax[0].set_xlabel("Time")
-    ax[0].set_title(f"{filename}", fontsize=8)
+    ax[0].set_title(f"{filename}", fontsize=8, wrap=True)
     ax[0].legend(loc="upper right", bbox_to_anchor=(1.21, 0.5))
     ax[0].set_ylabel("QSO count")
     ax[1].set_ylabel("Frequency / kHz")
@@ -96,7 +95,7 @@ def show_gui():
         calls = []
         for i in range(NUM_CALLS_SELECTABLE):
             calls.append(call_sel[i].get())
-        calls = list(dict.fromkeys(calls))   # remove dups
+        calls = list(dict.fromkeys(calls))  # remove dups
         calls[:] = [item for item in calls if item != ""]  # remove blanks
         if len(calls) > 0:
             csv_analyse(cur_filename.get(), calls)

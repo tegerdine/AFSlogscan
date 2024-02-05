@@ -4,7 +4,7 @@ Python utility for analysing QSO rate progress and QSO frequency using RSGB cont
 Usage:
 `python logscan.py`
 
-Libraries required: 
+Libraries required (versions from Feb 2024 confirmed compatible): 
 - pandas
 - matplotlib
 - tkinter

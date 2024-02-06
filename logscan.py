@@ -28,14 +28,20 @@ def csv_analyse(filename, wanted_calls):
         df_call = df.loc[(df["Entrant"] == target)]
         times = pd.to_datetime(df_call["Date"] + " " + df_call["Time"], format = "%d/%m/%y %H:%M")
         ax[0].plot(times, df_call["SnTX"], label = target, marker = ".", linewidth = 1)
-        ax[1].plot(times, df_call["Frequency"], label = target, marker = ".", linewidth = 1)
+        if "Frequency" in df_call.columns: # hack to make RSGB VHF logs also work
+            Freq_field="Frequency"
+            y_label = "Frequency / kHz"
+        else:
+            Freq_field="Band"
+            y_label = "Band / m"
+        ax[1].plot(times, df_call[Freq_field], label = target, marker = ".", linewidth = 1)
 
     ax[0].xaxis.set_major_formatter(DateFormatter("%H:%M"))
     ax[0].set_xlabel("Time")
     ax[0].set_title(f"{filename}", fontsize = 8, wrap = True)
     ax[0].legend(loc="upper right", bbox_to_anchor=(1.21, 0.5))
     ax[0].set_ylabel("QSO count")
-    ax[1].set_ylabel("Frequency / kHz")
+    ax[1].set_ylabel(y_label)
     ax[0].grid()
     ax[1].grid()
     plt.tight_layout()

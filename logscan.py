@@ -1,8 +1,9 @@
-#!/usr/bin/env python
-"""\
+#!/usr/bin/env python3
+"""
 Read in a RSGB contest result CSV file and plot QSO count and freq vs. time
+for selected callsigns.
 
-Usage: python logscan.py
+Usage: python3 logscan.py
 
 G0LRD, 2024-02-04
 """

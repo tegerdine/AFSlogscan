@@ -14,13 +14,8 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import filedialog
 
-NUM_CALLS_SELECTABLE = 8
+NUM_CALLS_SELECTABLE = 5
 GUI_WIDTH = 320
-
-def csv_read_call_list(filename):
-    df = pd.read_csv(filename, skiprows = 1)
-    return list(df.Entrant.unique())
-
 
 def csv_analyse(filename, wanted_calls):
     df = pd.read_csv(filename, skiprows = 1)
@@ -67,10 +62,11 @@ def show_gui():
             filetypes=(("CSV files", "*.csv"), ("all files", "*.*")))
         if newfile != None:
             cur_filename.set(newfile.name)
-            call_list = csv_read_call_list(newfile.name)
+            df = pd.read_csv(newfile.name, skiprows = 1)
+            call_list = list(df.Entrant.unique())
             call_list.insert(0, "")  # add a blank call to allow de-selection
             for i in range(NUM_CALLS_SELECTABLE):
-                combo[i]["values"] = list(call_list)
+                combo[i]["values"] = call_list
                 combo[i].set("")
         return
 

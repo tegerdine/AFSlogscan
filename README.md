@@ -8,5 +8,13 @@ Libraries required (versions from Feb 2024 confirmed compatible):
 - pandas
 - matplotlib
 - tkinter
+---
+GUI log file and callsign selection:
 
+![Image of GUI app](http://46.235.224.248/main/app1.png)
+
+Example output:
+
+![Image of example output](http://46.235.224.248/main/app2.png)
+---
 Concept inspired by MATLAB code performing similar analysis by Andy G4KNO

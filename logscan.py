@@ -80,6 +80,10 @@ def show_gui():
                 combo[i].set("")
         return
 
+    def close_all():
+        plt.close('all')
+        root.destroy()
+
     button = tk.Button(root, text="Select CSV File", command = open_file)
     button.pack(expand = True)
 
@@ -109,6 +113,7 @@ def show_gui():
 
     button = tk.Button(root, text="Create Plot", command = plot)
     button.pack(expand = True)
+    root.protocol("WM_DELETE_WINDOW", close_all)
     tk.mainloop()
 
 

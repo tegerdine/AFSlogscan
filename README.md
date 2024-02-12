@@ -9,11 +9,11 @@ Libraries required (versions from Feb 2024 confirmed compatible):
 - matplotlib
 - tkinter
 ---
-GUI log file and callsign selection:
+Image of GUI log file and callsign selection dialog. Select a CSV log file, then up to 5 callsigns for analysis:
 
 ![Image of GUI app](http://46.235.224.248/main/app1.png)
 
-Example output:
+Image of example output (note: the real plot is interactive, zoom by clicking the magnifying glass icon then selecting an area):
 
 ![Image of example output](http://46.235.224.248/main/app2.png)
 ---

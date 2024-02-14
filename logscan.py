@@ -42,14 +42,15 @@ def csv_analyse(filename, wanted_calls):
     ax[0].set_title(f"{filename}", fontsize = 8, wrap = True)
     ax[0].legend(loc="upper right", bbox_to_anchor=(1.21, 0.5))
     ax[0].set_ylabel("QSO count")
-    ax[1].set_ylabel(y_label)
+    ax[0].yaxis.get_major_locator().set_params(integer=True)
     ax[0].grid()
     ax[1].grid()
+    ax[1].set_ylabel(y_label)
     
     if Freq_field == "Frequency": # colour and label amateur HF contest bands
         ham_bands=[[1800,1999,'160m'], [3500,3799,'80m'], [7000,7199,'40m'], [14000,14349,'20m'], [21000,21449,'15m'], [28000,28999,'10m']]
         for band in ham_bands:
-            ax[1].axhspan(band[0], band[1], facecolor='gold', alpha=0.5)
+            ax[1].axhspan(band[0], band[1], facecolor='green', alpha=0.25)
             _, xmax = ax[1].get_xlim()
             ax[1].text(xmax, band[0], band[2], fontsize=11, va='center')
    
